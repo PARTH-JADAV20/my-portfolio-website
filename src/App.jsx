@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Header from './Components/Header.jsx'
 import About from './Components/About.jsx';
-import Projects from './components/Projects.jsx';
-import Skills from './components/Skills.jsx';
-import Education from './components/Education.jsx';
-import Contact from './components/Contact.jsx';
+import Projects from './Components/Projects.jsx';
+import Skills from './Components/Skills.jsx';
+import Education from './Components/Education.jsx';
+import Contact from './Components/Contact.jsx';
 import Footer from './Components/Footer.jsx';
 
 
