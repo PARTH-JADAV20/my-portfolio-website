@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Header from './components/Header.jsx';
+import Header from './Components/Header.jsx'
 import About from './Components/About.jsx';
 import Projects from './components/Projects.jsx';
 import Skills from './components/Skills.jsx';
