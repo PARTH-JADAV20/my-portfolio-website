@@ -3,7 +3,14 @@ import img1 from '../images/me2.jpg';
 
 export default function About() {
   return (
-    <section id="about" className="pt-32 pb-20 bg-gradient-to-b from-blue-50 to-white dark:from-gray-800 dark:to-gray-900">
+    <section id="about" className="relative pt-32 pb-20 bg-gradient-to-b from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 overflow-hidden">
+      {/* Floating Blobs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-20 left-1/4 w-72 h-72 bg-blue-300 opacity-30 blur-3xl rounded-full animate-blobs"></div>
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-300 opacity-20 blur-3xl rounded-full animate-blobs animation-delay-2000"></div>
+        <div className="absolute bottom-10 left-1/3 w-64 h-64 bg-pink-300 opacity-20 blur-3xl rounded-full animate-blobs animation-delay-4000"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:w-1/2">
@@ -43,7 +50,7 @@ export default function About() {
               <img
                 src={img1}
                 alt="Parth Jadav"
-                className="relative w-64 h-80 object-cover rounded-full shadow-xl transform  hover:rotate-3 transition-transform duration-300 grayscale"
+                className="relative w-64 h-80 object-cover rounded-full shadow-xl transform hover:rotate-3 transition-transform duration-300 grayscale"
               />
             </div>
             <div className="text-center">
@@ -53,6 +60,27 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      {/* Animation CSS */}
+      <style jsx>{`
+        @keyframes blobs {
+          0%, 100% {
+            transform: translateY(0) scale(1);
+          }
+          50% {
+            transform: translateY(-30px) scale(1.1);
+          }
+        }
+        .animate-blobs {
+          animation: blobs 10s infinite ease-in-out alternate;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+      `}</style>
     </section>
   );
 }
