@@ -16,7 +16,7 @@ export default function Projects() {
       figma: "https://www.figma.com/design/Ccb55yT6IzEFeFS8JaOTdJ/outfitsofjoy?node-id=0-1&t=EuCTkbeMXNHquqx1-1",
       preview: "https://outfits-of-joy.vercel.app/",
       image: img2,
-      tags: ["React", "Node.js", "MongoDB", "Express", "JWT", "Tailwind CSS", "Authentication"]
+      tags: ["React", "Node.js", "MongoDB", "Express", "JWT", "Tailwind CSS", "Authentication", "PaymentGateway"]
     },
     {
       title: "FarmTust",
@@ -25,7 +25,7 @@ export default function Projects() {
       figma: "https://www.figma.com/design/SNuN8wbnReIue8nUOJhjEG/Untitled?node-id=0-1&p=f&t=tAvB32zrNQdsGZpU-0",
       preview: "https://farmtrust.netlify.app/",
       image: img7,
-      tags: ["React", "Node.js", "MongoDB", "Express", "Socket.io", "Ai Chatbot", "i18n", "Authentication", "Team Work"]
+      tags: ["React", "Node.js", "MongoDB", "Express", "Socket.io", "Ai Chatbot", "i18n", "Authentication", "Hackathon"]
     },
     {
       title: "4 APIS",
@@ -103,7 +103,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
                     >
-                      <ExternalLink className="w-4 h-4 mr-1" /> Live Preview
+                      <ExternalLink className="w-4 h-4 mr-1" /> Webiste Link
                     </a>
                   )}
                   {project.postmanDocs && (
