@@ -6,6 +6,7 @@ import Skills from './Components/Skills.jsx';
 import Education from './Components/Education.jsx';
 import Contact from './Components/Contact.jsx';
 import Footer from './Components/Footer.jsx';
+import Certificates from './Components/Certificates.jsx';
 
 function App() {
   // Load dark mode preference from localStorage (default: true)
@@ -28,6 +29,7 @@ function App() {
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <About />
       <Projects />
+      <Certificates />
       <Skills />
       <Education />
       <Contact />

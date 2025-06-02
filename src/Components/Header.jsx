@@ -11,6 +11,7 @@ export default function Header({ darkMode, setDarkMode }) {
   const navLinks = [
     { id: 'about', label: 'About' },
     { id: 'projects', label: 'Projects' },
+    { id: 'certificates', label: 'Certificates' },
     { id: 'skills', label: 'Skills' },
     { id: 'education', label: 'Education' },
     { id: 'contact', label: 'Contact' }
