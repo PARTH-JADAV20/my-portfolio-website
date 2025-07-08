@@ -12,13 +12,6 @@ export default function Contact() {
         </div>
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-8">
           <a
-            href="mailto:parthjadav.cg@gmail.com"
-            className="group flex items-center px-6 py-3 bg-white dark:bg-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1 w-full sm:w-auto"
-          >
-            <Mail className="w-6 h-6 mr-3 text-blue-600 dark:text-blue-400" />
-            <span className="text-gray-600 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Email Me</span>
-          </a>
-          <a
             href="https://github.com/PARTH-JADAV20"
             target="_blank"
             rel="noopener noreferrer"
@@ -35,6 +28,14 @@ export default function Contact() {
           >
             <Linkedin className="w-6 h-6 mr-3 text-blue-600 dark:text-blue-400" />
             <span className="text-gray-600 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">LinkedIn</span>
+          </a>
+          <a
+            href="mailto:parthjadav.cg@gmail.com"
+            title='parthjadav.cg@gmail.com'
+            className="group flex items-center px-6 py-3 bg-white dark:bg-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1 w-full sm:w-auto"
+          >
+            <Mail className="w-6 h-6 mr-3 text-blue-600 dark:text-blue-400" />
+            <span className="text-gray-600 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Email Me</span>
           </a>
         </div>
       </div>

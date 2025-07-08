@@ -15,7 +15,7 @@ export default function About() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:w-1/2">
             <div className="inline-block mb-4 px-4 py-1 bg-blue-100 dark:bg-blue-900 rounded-full">
-              <p className="text-blue-600 dark:text-blue-400 font-medium">ASPIRING SOFTWARE ENGINEER</p>
+              <p className="text-blue-600 dark:text-blue-400 font-medium">ASPIRING FULLSTACK DEVELOPER</p>
             </div>
             <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
               Building Digital

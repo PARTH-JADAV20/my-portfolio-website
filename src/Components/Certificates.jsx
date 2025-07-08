@@ -14,6 +14,14 @@ import cert8 from '../images/Certificates/RUxPowerBi.png';
 import cert9 from '../images/Certificates/odooXgujvidya.jpg';
 import cert10 from '../images/Certificates/node_basic.png';
 import cert11 from '../images/Certificates/node_inter.png';
+import cert12 from '../images/Certificates/Aws docdb simplilearn.png';
+import cert13 from '../images/Certificates/azure basic simplilearn.png';
+import cert14 from '../images/Certificates/azure fundamental simplilearn.png';
+import cert15 from '../images/Certificates/container security simplilearn.png';
+import cert16 from '../images/Certificates/full satck infosys.png';
+import cert17 from '../images/Certificates/gateway loadbalancer simplilearn.png';
+import cert18 from '../images/Certificates/genai backend coursera.png';
+import cert19 from '../images/Certificates/restapi_hackerrank.png';
 
 export default function Certificates() {
   const certificates = [
@@ -51,6 +59,46 @@ export default function Certificates() {
       title: "GitHub Copilot",
       image: cert6,
       description: "Completed GitHub Copilot Course from simplilearn | skillup"
+    },
+    {
+      title: "Rest API Certification",
+      image: cert19,
+      description: "Certified Rest API Developer from HackerRank"
+    },
+    {
+      title: "AWS DocumentDB",
+      image: cert12,
+      description: "Completed AWS DocumentDB Course from Simplilearn|Skillup"
+    },
+    {
+      title: "Azure basic",
+      image: cert13,
+      description: "Completed Azure Basic Course from Simplilearn|Skillup"
+    },
+    {
+      title: "Azure fundamental",
+      image: cert14,
+      description: "Completed Azure Fundamental Course from Simplilearn|Skillup"
+    },
+    {
+      title: "Container Security AWS",
+      image: cert15,
+      description: "Completed Container Security Course from Simplilearn|Skillup AWS"
+    },
+    {
+      title: "Full Stack Developer",
+      image: cert16,
+      description: "Completed Full Stack Developer Course from Infosys Springboard"
+    },
+    {
+      title: "Gateway load balancer AWS",
+      image: cert17,
+      description: "Completed Gateway Load Balancer Course from Simplilearn|Skillup AWS"
+    },
+    {
+      title: "GenAI for Backend Developers",
+      image: cert18,
+      description: "Completed GenAI for Backend Developers Course from Coursera"
     },
     {
       title: "CSS(Basic) Certification",
