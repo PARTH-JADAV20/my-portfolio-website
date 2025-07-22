@@ -5,6 +5,8 @@ import img4 from '../images/yt.png';
 import img5 from '../images/uc.png';
 import img6 from '../images/re.png';
 import img7 from '../images/farmtrust.png';
+import img8 from '../images/graspcheck.png';
+import img9 from '../images/internship.png';
 
 export default function Projects() {
   const projects = [
@@ -26,6 +28,18 @@ export default function Projects() {
       preview: "https://farmtrust.netlify.app/",
       image: img7,
       tags: ["React", "Node.js", "MongoDB", "Express", "Socket.io", "Ai Chatbot", "i18n", "Authentication", "Hackathon"]
+    },
+    {
+      title: "Bussiness Pro",
+      description: "A full-stack stock and bill management system for a construction businessman. Built with React, Node.js, and MongoDB.",
+      image: img9,
+      tags: ["React", "Node.js", "MongoDB", "Express", "freelancer", "Authentication", "firebase"]
+    },
+    {
+      title: "GraspCheck",
+      description: "A chrome extension that helps to check your grasp power after reading a article by generating questions based on the content of the article using Gemini API.",
+      image: img8,
+      tags: ["React", "gemini API", "webscraping", "chrome extension"]
     },
     {
       title: "4 APIS",
