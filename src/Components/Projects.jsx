@@ -32,12 +32,15 @@ export default function Projects() {
     {
       title: "Bussiness Pro",
       description: "A full-stack stock and bill management system for a construction businessman. Built with React, Node.js, and MongoDB.",
+      preview: "https://business-pro-app.netlify.app/",
+      github: "https://github.com/PARTH-JADAV20/business-pro",
       image: img9,
       tags: ["React", "Node.js", "MongoDB", "Express", "freelancer", "Authentication", "firebase"]
     },
     {
       title: "GraspCheck",
       description: "A chrome extension that helps to check your grasp power after reading a article by generating questions based on the content of the article using Gemini API.",
+      github: "https://github.com/PARTH-JADAV20/graspcheck",
       image: img8,
       tags: ["React", "gemini API", "webscraping", "chrome extension"]
     },
