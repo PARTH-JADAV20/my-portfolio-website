@@ -18,7 +18,7 @@ export default function Projects() {
       figma: "https://www.figma.com/design/Ccb55yT6IzEFeFS8JaOTdJ/outfitsofjoy?node-id=0-1&t=EuCTkbeMXNHquqx1-1",
       preview: "https://outfits-of-joy.vercel.app/",
       image: img2,
-      tags: ["React", "Node.js", "Next.js", "SQL", "MongoDB", "Express", "JWT", "Tailwind CSS", "Authentication", "PaymentGateway"]
+      tags: ["React", "Node.js", "MongoDB", "Express", "JWT", "Tailwind CSS", "Authentication", "PaymentGateway"]
     },
     {
       title: "FarmTust",
