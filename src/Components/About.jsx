@@ -42,6 +42,13 @@ export default function About() {
               >
                 View Projects
               </a>
+              <a
+                href="/Parth Jadav Resume.pdf"
+                download
+                className="group border-2 border-gray-300 dark:border-gray-600 px-6 py-3 rounded-full hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors dark:text-white ml-4"
+              >
+                Download Resume
+              </a>
             </div>
           </div>
           <div className="md:w-1/2 flex flex-col items-center space-y-6">

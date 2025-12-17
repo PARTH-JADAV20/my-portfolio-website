@@ -7,6 +7,8 @@ import img6 from '../images/re.png';
 import img7 from '../images/farmtrust.png';
 import img8 from '../images/graspcheck.png';
 import img9 from '../images/internship.png';
+import img10 from '../images/sip.png';
+import img11 from '../images/tictaktoe.png';
 
 export default function Projects() {
   const projects = [
@@ -36,6 +38,22 @@ export default function Projects() {
       github: "https://github.com/PARTH-JADAV20/business-pro",
       image: img9,
       tags: ["React", "Node.js", "MongoDB", "Express", "freelancer", "Authentication", "firebase"]
+    },
+    {
+      title: "WealthGrove",
+      description: "A full-stack Next.js application for browsing mutual funds, calculating returns, running SIP simulations, and visualizing investment growth.",
+      preview: "https://sip-app-ten.vercel.app/",
+      github: "https://github.com/PARTH-JADAV20/SIP-APP",
+      image: img10,
+      tags: ["Next js", "MongoDB", "Material UI", "Recharts", "REST APIs"]
+    },
+    {
+      title: "TicTacToe",
+      description: "A modern, multiplayer Tic Tac Toe game with a neon-themed UI, featuring live multiplayer functionality, game history tracking, and a leaderboard system. Created with bolt.new",
+      preview: "https://parth-tic-tac-toe.vercel.app/",
+      github: "https://github.com/PARTH-JADAV20/Next-tic-tac-toe",
+      image: img11,
+      tags: ["Next js", "MongoDB", "bolt.new", "Ai Generation"]
     },
     {
       title: "GraspCheck",

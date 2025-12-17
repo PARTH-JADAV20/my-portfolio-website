@@ -184,7 +184,18 @@ export default function Certificates() {
         <div className="text-center mb-16">
           <Award className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Certifications</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">My professional credentials and achievements</p>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">My professional credentials and achievements</p>
+          <a 
+            href="https://www.linkedin.com/in/jadav-parth/details/certifications/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+          >
+            View All Certificates
+            <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
+            </svg>
+          </a>
         </div>
 
         <div className="relative">
