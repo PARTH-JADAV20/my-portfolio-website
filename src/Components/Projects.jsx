@@ -97,17 +97,17 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-gray-800">
+    <section id="projects" className="py-20 bg-muted-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Briefcase className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">Transforming ideas into digital reality</p>
+          <Briefcase className="w-12 h-12 text-muted-blue-600 mx-auto mb-4" />
+          <h2 className="text-4xl font-semibold text-text-gray-dark mb-4">Featured Projects</h2>
+          <p className="text-lg text-text-gray">Transforming ideas into digital reality</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="group relative bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="aspect-video overflow-hidden">
+            <div key={index} className="group relative bg-white rounded-flat-lg overflow-hidden border-2 border-muted-blue-200 hover:border-muted-blue-400 transition-all duration-300 hover:-translate-y-1">
+              <div className="aspect-video overflow-hidden bg-muted-blue-100">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -115,30 +115,30 @@ export default function Projects() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{project.title}</h3>
+                <h3 className="text-xl font-semibold text-text-gray-dark mb-2">{project.title}</h3>
                 
                 {/* Technology tags placed under title */}
                 <div className="flex flex-wrap gap-2 mb-3">
                   {project.tags.map((tag, i) => (
                     <span 
                       key={i} 
-                      className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-full"
+                      className="text-xs px-2 py-1 bg-muted-blue-100 text-muted-blue-700 rounded-full border border-muted-blue-200"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
                 
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
+                <p className="text-text-gray mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-3">
                   {project.preview && (
                     <a
                       href={project.preview}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                      className="inline-flex items-center text-sm text-muted-blue-600 hover:text-muted-blue-700 transition-colors"
                     >
-                      <ExternalLink className="w-4 h-4 mr-1" /> Webiste Link
+                      <ExternalLink className="w-4 h-4 mr-1" /> Website Link
                     </a>
                   )}
                   {project.postmanDocs && (
@@ -146,7 +146,7 @@ export default function Projects() {
                       href={project.postmanDocs}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                      className="inline-flex items-center text-sm text-muted-blue-600 hover:text-muted-blue-700 transition-colors"
                     >
                       <ExternalLink className="w-4 h-4 mr-1" /> Documentation
                     </a>
@@ -156,7 +156,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                      className="inline-flex items-center text-sm text-muted-blue-600 hover:text-muted-blue-700 transition-colors"
                     >
                       <Github className="w-4 h-4 mr-1" /> GitHub
                     </a>
@@ -166,7 +166,7 @@ export default function Projects() {
                       href={project.figma}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                      className="inline-flex items-center text-sm text-muted-blue-600 hover:text-muted-blue-700 transition-colors"
                     >
                       <Figma className="w-4 h-4 mr-1" /> Figma
                     </a>

@@ -179,17 +179,17 @@ export default function Certificates() {
   };
 
   return (
-    <section id="certificates" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="certificates" className="py-20 bg-muted-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Award className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Certifications</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">My professional credentials and achievements</p>
+          <Award className="w-12 h-12 text-muted-blue-600 mx-auto mb-4" />
+          <h2 className="text-4xl font-semibold text-text-gray-dark mb-4">Certifications</h2>
+          <p className="text-lg text-text-gray mb-6">My professional credentials and achievements</p>
           <a 
             href="https://www.linkedin.com/in/jadav-parth/details/certifications/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+            className="inline-flex items-center px-6 py-3 text-base font-medium rounded-full text-white bg-muted-blue-500 hover:bg-muted-blue-600 transition-colors duration-200 border border-muted-blue-600"
           >
             View All Certificates
             <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -201,7 +201,7 @@ export default function Certificates() {
         <div className="relative">
           {/* Certificate Counter */}
           <div className="text-center mb-6">
-            <span className="text-gray-600 dark:text-gray-300 text-lg font-medium">
+            <span className="text-text-gray text-lg font-medium">
               {currentIndex + 1} / {certificates.length}
             </span>
           </div>
@@ -215,17 +215,17 @@ export default function Certificates() {
               animate={{ opacity: 0.6, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden">
+              <div className="bg-white rounded-flat-lg border-2 border-muted-blue-200 overflow-hidden">
                 <img
                   src={certificates[prevIndex].image}
                   alt={certificates[prevIndex].title}
                   className="w-full h-32 sm:h-40 md:h-48 object-cover"
                 />
                 <div className="p-4">
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white text-center">
+                  <h3 className="text-base sm:text-lg font-semibold text-text-gray-dark text-center">
                     {certificates[prevIndex].title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 text-center">
+                  <p className="text-xs sm:text-sm text-text-gray text-center">
                     {certificates[prevIndex].description}
                   </p>
                 </div>
@@ -242,9 +242,9 @@ export default function Certificates() {
               exit="exit"
               transition={{ duration: 0.5 }}
             >
-              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg dark:shadow-none border-2 border-gray-200 dark:border-none overflow-visible">
+              <div className="bg-white rounded-flat-lg border-2 border-muted-blue-400 overflow-hidden">
                 <div
-                  className="relative w-full h-48 sm:h-56 md:h-64 transition-transform duration-300"
+                  className="relative w-full h-48 sm:h-56 md:h-64 transition-transform duration-300 bg-muted-blue-100"
                   style={{ transform: isZoomed ? 'scale(1.5)' : 'scale(1)', transformOrigin: 'center' }}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
@@ -256,10 +256,10 @@ export default function Certificates() {
                   />
                 </div>
                 <div className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white text-center">
+                  <h3 className="text-lg sm:text-xl font-semibold text-text-gray-dark text-center">
                     {certificates[currentIndex].title}
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-center">
+                  <p className="text-sm sm:text-base text-text-gray text-center">
                     {certificates[currentIndex].description}
                   </p>
                 </div>
@@ -273,17 +273,17 @@ export default function Certificates() {
               animate={{ opacity: 0.6, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden">
+              <div className="bg-white rounded-flat-lg border-2 border-muted-blue-200 overflow-hidden">
                 <img
                   src={certificates[nextIndex].image}
                   alt={certificates[nextIndex].title}
                   className="w-full h-32 sm:h-40 md:h-48 object-cover"
                 />
                 <div className="p-4">
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white text-center">
+                  <h3 className="text-base sm:text-lg font-semibold text-text-gray-dark text-center">
                     {certificates[nextIndex].title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 text-center">
+                  <p className="text-xs sm:text-sm text-text-gray text-center">
                     {certificates[nextIndex].description}
                   </p>
                 </div>
@@ -295,14 +295,14 @@ export default function Certificates() {
           <div className="flex justify-center gap-4 mt-6">
             <button
               onClick={handlePrev}
-              className="p-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+              className="p-2 rounded-full bg-muted-blue-500 text-white hover:bg-muted-blue-600 transition-colors border border-muted-blue-600"
               aria-label="Previous certificate"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={handleNext}
-              className="p-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+              className="p-2 rounded-full bg-muted-blue-500 text-white hover:bg-muted-blue-600 transition-colors border border-muted-blue-600"
               aria-label="Next certificate"
             >
               <ChevronRight className="w-6 h-6" />

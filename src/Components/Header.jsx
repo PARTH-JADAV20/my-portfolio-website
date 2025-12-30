@@ -1,7 +1,7 @@
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
-export default function Header({ darkMode, setDarkMode }) {
+export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -18,10 +18,10 @@ export default function Header({ darkMode, setDarkMode }) {
   ];
 
   return (
-    <nav className="fixed w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md z-50 shadow-sm">
+    <nav className="fixed w-full bg-white z-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
+          <h1 className="text-2xl font-semibold text-text-gray-dark">
             Parth Jadav
           </h1>
 
@@ -31,46 +31,24 @@ export default function Header({ darkMode, setDarkMode }) {
               <a
                 key={link.id}
                 href={`#${link.id}`}
-                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                className="text-text-gray hover:text-muted-blue-600 transition-colors font-medium"
               >
                 {link.label}
               </a>
             ))}
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? (
-                <Sun className="w-5 h-5 text-yellow-500" />
-              ) : (
-                <Moon className="w-5 h-5 text-gray-600" />
-              )}
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? (
-                <Sun className="w-5 h-5 text-yellow-500" />
-              ) : (
-                <Moon className="w-5 h-5 text-gray-600" />
-              )}
-            </button>
+          <div className="md:hidden flex items-center">
             <button
               onClick={toggleMobileMenu}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              className="p-2 rounded-flat hover:bg-gray-100 transition-colors"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
-                <X className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+                <X className="w-5 h-5 text-text-gray" />
               ) : (
-                <Menu className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+                <Menu className="w-5 h-5 text-text-gray" />
               )}
             </button>
           </div>
@@ -78,13 +56,13 @@ export default function Header({ darkMode, setDarkMode }) {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
+          <div className="md:hidden mt-4 pb-4 space-y-2 border-t border-gray-200 pt-4">
             {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 px-4 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="block py-2 px-4 text-text-gray hover:text-muted-blue-600 transition-colors rounded-flat hover:bg-gray-50 font-medium"
               >
                 {link.label}
               </a>
