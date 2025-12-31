@@ -10,7 +10,8 @@ import img9 from '../images/internship.png';
 import img10 from '../images/sip.png';
 import img11 from '../images/tictaktoe.png';
 
-export default function Projects() {
+export default function Projects({ theme }) {
+  const t = theme || {};
   const projects = [
     {
       title: "Outfits Of Joy",
@@ -97,17 +98,17 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-muted-green-50">
+    <section id="projects" className={`py-20 ${t.bg || 'bg-muted-green-50'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Briefcase className="w-12 h-12 text-muted-green-600 mx-auto mb-4" />
+          <Briefcase className={`w-12 h-12 ${t.icon || 'text-muted-green-600'} mx-auto mb-4`} />
           <h2 className="text-4xl font-semibold text-text-gray-dark mb-4">Featured Projects</h2>
           <p className="text-lg text-text-gray">Transforming ideas into digital reality</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="group relative bg-white rounded-flat-lg overflow-hidden border-2 border-muted-green-200 hover:border-muted-green-400 transition-all duration-300 hover:-translate-y-1">
-              <div className="aspect-video overflow-hidden bg-muted-green-100">
+            <div key={index} className={`group relative bg-white rounded-flat-lg overflow-hidden border-2 ${t.cardBorder || 'border-muted-green-200'} ${t.cardHover || 'hover:border-muted-green-400'} transition-all duration-300 hover:-translate-y-1`}>
+              <div className={`aspect-video overflow-hidden ${t.mediaBg || 'bg-muted-green-100'}`}>
                 <img
                   src={project.image}
                   alt={project.title}
@@ -122,7 +123,7 @@ export default function Projects() {
                   {project.tags.map((tag, i) => (
                     <span 
                       key={i} 
-                      className="text-xs px-2 py-1 bg-muted-green-100 text-muted-green-700 rounded-full border border-muted-green-200"
+                      className={`text-xs px-2 py-1 ${t.tagBg || 'bg-muted-green-100'} ${t.tagText || 'text-muted-green-700'} rounded-full border ${t.tagBorder || 'border-muted-green-200'}`}
                     >
                       {tag}
                     </span>
@@ -136,7 +137,7 @@ export default function Projects() {
                       href={project.preview}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-muted-green-600 hover:text-muted-green-700 transition-colors"
+                      className={`inline-flex items-center text-sm ${t.link || 'text-muted-green-600'} ${t.linkHover || 'hover:text-muted-green-700'} transition-colors`}
                     >
                       <ExternalLink className="w-4 h-4 mr-1" /> Website Link
                     </a>
@@ -146,7 +147,7 @@ export default function Projects() {
                       href={project.postmanDocs}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-muted-green-600 hover:text-muted-green-700 transition-colors"
+                      className={`inline-flex items-center text-sm ${t.link || 'text-muted-green-600'} ${t.linkHover || 'hover:text-muted-green-700'} transition-colors`}
                     >
                       <ExternalLink className="w-4 h-4 mr-1" /> Documentation
                     </a>
@@ -156,7 +157,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-muted-green-600 hover:text-muted-green-700 transition-colors"
+                      className={`inline-flex items-center text-sm ${t.link || 'text-muted-green-600'} ${t.linkHover || 'hover:text-muted-green-700'} transition-colors`}
                     >
                       <Github className="w-4 h-4 mr-1" /> GitHub
                     </a>
@@ -166,7 +167,7 @@ export default function Projects() {
                       href={project.figma}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-muted-green-600 hover:text-muted-green-700 transition-colors"
+                      className={`inline-flex items-center text-sm ${t.link || 'text-muted-green-600'} ${t.linkHover || 'hover:text-muted-green-700'} transition-colors`}
                     >
                       <Figma className="w-4 h-4 mr-1" /> Figma
                     </a>

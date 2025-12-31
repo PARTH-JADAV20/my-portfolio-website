@@ -1,7 +1,7 @@
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 
-export default function Header() {
+export default function Header({ onThemeToggle, themeName }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -36,6 +36,13 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
+            <button
+              onClick={onThemeToggle}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-text-gray hover:border-muted-blue-300 hover:bg-gray-50 transition-colors"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span className="text-sm font-medium">Theme: {themeName}</span>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -67,6 +74,13 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
+            <button
+              onClick={() => { onThemeToggle?.(); setMobileMenuOpen(false); }}
+              className="w-full flex items-center justify-center gap-2 py-2 px-4 text-text-gray border border-gray-200 rounded-flat hover:border-muted-blue-300 hover:bg-gray-50 transition-colors"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span className="text-sm font-medium">Theme: {themeName}</span>
+            </button>
           </div>
         )}
       </div>
