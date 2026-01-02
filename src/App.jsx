@@ -354,7 +354,11 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header onThemeToggle={cycleTheme} themeName={themes[themeIndex].name} />
+      <Header
+        onThemeToggle={cycleTheme}
+        themeName={themes[themeIndex].name}
+        sectionsTheme={current}
+      />
       <About theme={current.about} />
       <SectionDivider color={current.projects.dot} />
       <Projects theme={current.projects} />

@@ -1,4 +1,5 @@
 import { Briefcase, ExternalLink, Github, Figma } from 'lucide-react';
+import { useState } from 'react';
 import img2 from '../images/ooj.png';
 import img3 from '../images/fourapi.png';
 import img4 from '../images/yt.png';
@@ -12,6 +13,8 @@ import img11 from '../images/tictaktoe.png';
 
 export default function Projects({ theme }) {
   const t = theme || {};
+  const [showAll, setShowAll] = useState(false);
+  
   const projects = [
     {
       title: "Outfits Of Joy",
@@ -97,6 +100,8 @@ export default function Projects({ theme }) {
     }
   ];
 
+  const visibleProjects = showAll ? projects : projects.slice(0, 6);
+
   return (
     <section id="projects" className={`py-20 ${t.bg || 'bg-muted-green-50'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,7 +111,7 @@ export default function Projects({ theme }) {
           <p className="text-lg text-text-gray">Transforming ideas into digital reality</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <div key={index} className={`group relative bg-white rounded-flat-lg overflow-hidden border-2 ${t.cardBorder || 'border-muted-green-200'} ${t.cardHover || 'hover:border-muted-green-400'} transition-all duration-300 hover:-translate-y-1`}>
               <div className={`aspect-video overflow-hidden ${t.mediaBg || 'bg-muted-green-100'}`}>
                 <img
@@ -177,6 +182,21 @@ export default function Projects({ theme }) {
             </div>
           ))}
         </div>
+
+        {/* Load More Button */}
+        {!showAll && projects.length > 6 && (
+          <div className="flex justify-center mt-12">
+            <button
+              onClick={() => setShowAll(true)}
+              className={`group px-8 py-3 bg-white border-2 ${t.cardBorder || 'border-muted-green-200'} ${t.cardHover || 'hover:border-muted-green-400'} rounded-full font-medium text-text-gray ${t.linkHover || 'hover:text-muted-green-700'} transition-all hover:-translate-y-1 flex items-center gap-2`}
+            >
+              Show More Projects
+              <svg className="w-4 h-4 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

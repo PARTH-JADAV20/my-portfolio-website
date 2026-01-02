@@ -1,8 +1,15 @@
 import { Menu, X, Sparkles } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
-export default function Header({ onThemeToggle, themeName }) {
+export default function Header({ onThemeToggle, themeName, sectionsTheme }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const linkColors = useMemo(() => {
+    if (!sectionsTheme) return {};
+    return Object.fromEntries(
+      Object.entries(sectionsTheme).map(([id, cfg]) => [id, cfg?.dot || cfg?.icon || 'text-text-gray'])
+    );
+  }, [sectionsTheme]);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -31,7 +38,7 @@ export default function Header({ onThemeToggle, themeName }) {
               <a
                 key={link.id}
                 href={`#${link.id}`}
-                className="text-text-gray hover:text-muted-blue-600 transition-colors font-medium"
+                className={`transition-colors font-medium ${linkColors[link.id] || 'text-text-gray'} hover:opacity-90`}
               >
                 {link.label}
               </a>
@@ -69,7 +76,7 @@ export default function Header({ onThemeToggle, themeName }) {
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 px-4 text-text-gray hover:text-muted-blue-600 transition-colors rounded-flat hover:bg-gray-50 font-medium"
+                className={`block py-2 px-4 transition-colors rounded-flat hover:bg-gray-50 font-medium ${linkColors[link.id] || 'text-text-gray'} hover:opacity-90`}
               >
                 {link.label}
               </a>

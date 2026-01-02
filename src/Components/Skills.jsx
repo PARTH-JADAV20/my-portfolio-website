@@ -5,7 +5,7 @@ export default function Skills({ theme }) {
   const t = theme || {};
     const skills = [
       "React", "Node.js", "JavaScript", "Next.js",
-       "C++", "C-Language", "MongoDB", "SQL",
+       "C/C++", "Java", "MongoDB", "SQL", "Redis",
       "Git & GitHub", "API Handling", "Express.js", "TailwindCSS", 
       "Figma", "CSS", "HTML",  
     ];

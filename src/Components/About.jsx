@@ -16,9 +16,9 @@ export default function About({ theme }) {
               <span className={`block ${t.accentText || 'text-muted-orange-600'}`}>Experiences</span>
             </h2>
             <p className="text-lg text-text-gray mb-8 leading-relaxed">
-              Hi, I'm Parth Jadav. A passionate web developer with a knack for creating dynamic and user-friendly applications. I specialize in React and have hands-on experience in building clones of popular platforms like YouTube, Spotify, and Urban Company. My projects showcase my ability to bring ideas to life with modern UI/UX design using Tailwind CSS and Figma.
+              Hi, I'm Parth Jadav. I design and ship end-to-end web products, from UX in Figma to production-ready React apps. Recent builds include Outfits Of Joy, a full-stack rental marketplace with payments and JWT auth; FarmTrust, an organic e-commerce experience with Socket.io chat and i18n; and WealthGrove, a Next.js tool for SIP simulations and mutual fund insights. I also love crafting solid front-end experiences, like my YouTube and Urban Company recreations, to push interaction design.
               <br></br>
-              I also have a solid foundation in Node.js, Express, and MongoDB, which allows me to build robust and scalable back-end solutions. Currently, I'm diving deep into C++ to expand my programming knowledge and enhance my problem-solving skills.
+              On the backend I work with Node.js, Express, and MongoDB to keep things scalable and secure. Right now I'm also leveling up in cloud and DevOps (AWS, Docker, CI/CD) and sharpening data structures and algorithms for stronger problem-solving.
               <br></br>
               I'm always eager to learn and take on new challenges. Let's build something amazing together!
             </p>
