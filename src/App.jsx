@@ -7,6 +7,7 @@ import Education from './Components/Education.jsx';
 import Contact from './Components/Contact.jsx';
 import Footer from './Components/Footer.jsx';
 import Certificates from './Components/Certificates.jsx';
+import { Helmet } from "react-helmet-async";
 
 // Section Divider Component
 const SectionDivider = ({ color = "text-gray-300" }) => (
@@ -354,6 +355,107 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        {/* Primary SEO */}
+        <title>Parth Jadav | Full Stack Developer Portfolio</title>
+
+        <meta
+          name="description"
+          content="Parth Jadav is a Full Stack Developer skilled in React, Node.js, MongoDB. Explore projects, skills, and certificates."
+        />
+
+        <meta
+          name="keywords"
+          content="Parth Jadav, Parth Jadav Portfolio, Parth Jadav Developer, Parth Jadav CodingGita"
+        />
+
+        <meta name="author" content="Parth Jadav" />
+
+        {/* Viewport & Mobile */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://parth-jadav-portfolio.vercel.app/"
+        />
+
+        {/* Open Graph (for sharing) */}
+        <meta property="og:title" content="Parth Jadav | Full Stack Developer Portfolio" />
+        <meta
+          property="og:description"
+          content="Official portfolio of Parth Jadav, Full Stack Developer skilled in React, Node.js, MongoDB"
+        />
+        <meta
+          property="og:url"
+          content="https://parth-jadav-portfolio.vercel.app/"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Parth Jadav Portfolio" />
+        <meta property="og:locale" content="en_US" />
+        <meta
+          property="og:image"
+          content="https://parth-jadav-portfolio.vercel.app/portfolio-preview.jpg"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpeg" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Parth Jadav | Full Stack Developer" />
+        <meta
+          name="twitter:description"
+          content="Explore my portfolio showcasing full stack development projects and skills"
+        />
+        <meta
+          name="twitter:image"
+          content="https://parth-jadav-portfolio.vercel.app/portfolio-preview.jpg"
+        />
+        <meta name="twitter:creator" content="@parthjadav_2004" />
+
+        {/* Profile Meta Tags */}
+        <meta property="profile:first_name" content="Parth" />
+        <meta property="profile:last_name" content="Jadav" />
+        <meta property="profile:username" content="PARTH-JADAV20" />
+
+        {/* Icons */}
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+        {/* JSON-LD Schema */}
+        <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Parth Jadav",
+          "url": "https://parth-jadav-portfolio.vercel.app/",
+          "jobTitle": "Full Stack Developer",
+          "image": "https://parth-jadav-portfolio.vercel.app/portfolio-preview.jpg",
+          "sameAs": [
+            "https://github.com/PARTH-JADAV20",
+            "https://www.linkedin.com/in/jadav-parth/"
+            "https://x.com/Parthjadav_2004",
+            "https://leetcode.com/u/Jadav_Parth/"
+          ],
+          "knowsAbout": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "JavaScript",
+            "Full Stack Development",
+            "Web Development",
+            "Backend Development"
+          ]
+        }
+        `}
+      </script>
+      </Helmet>
+
       <Header
         onThemeToggle={cycleTheme}
         themeName={themes[themeIndex].name}
