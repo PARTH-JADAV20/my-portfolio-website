@@ -438,7 +438,7 @@ function App() {
           "image": "https://parth-jadav-portfolio.vercel.app/portfolio-preview.jpg",
           "sameAs": [
             "https://github.com/PARTH-JADAV20",
-            "https://www.linkedin.com/in/jadav-parth/"
+            "https://www.linkedin.com/in/jadav-parth/",
             "https://x.com/Parthjadav_2004",
             "https://leetcode.com/u/Jadav_Parth/"
           ],
@@ -453,6 +453,16 @@ function App() {
           ]
         }
         `}
+        <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@"type": "WebSite",
+          "name": "Parth Jadav's Portfolio",
+          "url": "https://parth-jadav-portfolio.vercel.app/"
+        }
+        `}
+</script>
       </script>
       </Helmet>
 
