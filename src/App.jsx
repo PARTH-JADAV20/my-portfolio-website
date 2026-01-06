@@ -453,7 +453,8 @@ function App() {
           ]
         }
         `}
-        <script type="application/ld+json">
+      </script>
+      <script type="application/ld+json">
         {`
         {
           "@context": "https://schema.org",
@@ -462,8 +463,7 @@ function App() {
           "url": "https://parth-jadav-portfolio.vercel.app/"
         }
         `}
-</script>
-      </script>
+        </script>
       </Helmet>
 
       <Header
