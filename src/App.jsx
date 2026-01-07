@@ -458,8 +458,8 @@ function App() {
         {`
         {
           "@context": "https://schema.org",
-          "@"type": "WebSite",
-          "name": "Parth Jadav's Portfolio",
+          "@type": "WebSite",
+          "name": "Parth Jadav",
           "url": "https://parth-jadav-portfolio.vercel.app/"
         }
         `}
