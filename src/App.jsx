@@ -292,6 +292,54 @@ function App() {
 
   const [themeIndex, setThemeIndex] = useState(0);
 
+  useEffect(() => {
+    const cursor = document.querySelector('.custom-cursor');
+    if (!cursor) return;
+
+    let lastX = 0;
+    let lastY = 0;
+
+    const updateColorAtPoint = (x, y) => {
+      const el = document.elementFromPoint(x, y);
+      if (!el) return;
+
+      const section = el.closest('section');
+      if (!section) return;
+
+      const color = getComputedStyle(section).getPropertyValue('--cursor-color');
+      if (color) {
+        document.documentElement.style.setProperty(
+          '--active-cursor-color',
+          color.trim()
+        );
+      }
+    };
+
+    const onMouseMove = (e) => {
+      lastX = e.clientX;
+      lastY = e.clientY;
+
+      cursor.style.left = `${lastX}px`;
+      cursor.style.top = `${lastY}px`;
+
+      updateColorAtPoint(lastX, lastY);
+    };
+
+    const onScroll = () => {
+      updateColorAtPoint(lastX, lastY);
+    };
+
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+
+
   const cycleTheme = () => {
     setThemeIndex((current) => (current + 1) % themes.length);
   };
@@ -355,6 +403,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      <div className="custom-cursor" />
       <Helmet>
         {/* Primary SEO */}
         <title>Parth Jadav | Full Stack Developer Portfolio</title>
@@ -428,7 +477,7 @@ function App() {
 
         {/* JSON-LD Schema */}
         <script type="application/ld+json">
-        {`
+          {`
         {
           "@context": "https://schema.org",
           "@type": "Person",
@@ -453,13 +502,13 @@ function App() {
           ]
         }
         `}
-      </script>
-      <script type="application/ld+json">
-        {`
+        </script>
+        <script type="application/ld+json">
+          {`
         {
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "name": "Parth Jadav",
+          "name": "Parth Jadav's Portfolio",
           "url": "https://parth-jadav-portfolio.vercel.app/"
         }
         `}
@@ -471,17 +520,49 @@ function App() {
         themeName={themes[themeIndex].name}
         sectionsTheme={current}
       />
-      <About theme={current.about} />
+
+      <section
+        id="about"
+        style={{ '--cursor-color': current.about.thumb }}
+      >
+        <About theme={current.about} />
+      </section>
+
       <SectionDivider color={current.projects.dot} />
-      <Projects theme={current.projects} />
+      <section
+        id="projects"
+        style={{ '--cursor-color': current.projects.thumb }}
+      >
+        <Projects theme={current.projects} />
+      </section>
       <SectionDivider color={current.certificates.dot} />
-      <Certificates theme={current.certificates} />
+      <section
+        id="certificates"
+        style={{ '--cursor-color': current.certificates.thumb }}
+      >
+        <Certificates theme={current.certificates} />
+      </section>
       <SectionDivider color={current.skills.dot} />
-      <Skills theme={current.skills} />
+      <section
+        id="skills"
+        style={{ '--cursor-color': current.skills.thumb }}
+      >
+        <Skills theme={current.skills} />
+      </section>
       <SectionDivider color={current.education.dot} />
-      <Education theme={current.education} />
+      <section
+        id="education"
+        style={{ '--cursor-color': current.education.thumb }}
+      >
+        <Education theme={current.education} />
+      </section>
       <SectionDivider color={current.contact.dot} />
-      <Contact theme={current.contact} />
+      <section
+        id="contact"
+        style={{ '--cursor-color': current.contact.thumb }}
+      >
+        <Contact theme={current.contact} />
+      </section>
       <Footer />
     </div>
   );

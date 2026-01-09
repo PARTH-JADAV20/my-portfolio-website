@@ -22,7 +22,6 @@ export default function Contact({ theme }) {
           console.error('❌ EmailJS Public Key is missing in .env.local');
         } else {
         emailjs.init(publicKey);
-        console.log('✓ EmailJS initialized successfully');
         window.emailJSInitialized = true;
       }
     } catch (error) {

@@ -10,9 +10,14 @@
   }
 }
 
+html, body {
+  cursor: none;
+}
+
 :root {
   --scrollbar-thumb: #d1d1d1;
   --scrollbar-track: #f5f5f5;
+  --active-cursor-color: #000;
 }
 
 ::-webkit-scrollbar {
@@ -31,4 +36,45 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb);
+}
+
+/* Custom cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: var(--active-cursor-color);
+  pointer-events: none;
+  z-index: 9999;
+
+  transform: translate(-50%, -50%);
+  transition:
+    background-color 0.15s ease,
+    transform 0.08s ease;
+}
+
+/* Hover effects */
+.custom-cursor.hover {
+  transform: translate(-50%, -50%) scale(1.4);
+}
+
+/* Inputs keep native cursor */
+input,
+textarea,
+select {
+  cursor: auto !important;
+}
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+
+  html, body {
+    cursor: auto;
+  }
 }
