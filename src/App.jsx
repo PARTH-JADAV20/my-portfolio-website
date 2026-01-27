@@ -7,6 +7,7 @@ import Education from './Components/Education.jsx';
 import Contact from './Components/Contact.jsx';
 import Footer from './Components/Footer.jsx';
 import Certificates from './Components/Certificates.jsx';
+import Assistant from './Components/Assistant.jsx';
 import { Helmet } from "react-helmet-async";
 
 // Section Divider Component
@@ -292,6 +293,14 @@ function App() {
 
   const [themeIndex, setThemeIndex] = useState(0);
 
+  // Scroll to top on page load/refresh and prevent browser scroll restoration
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     const cursor = document.querySelector('.custom-cursor');
     if (!cursor) return;
@@ -564,6 +573,9 @@ function App() {
         <Contact theme={current.contact} />
       </section>
       <Footer />
+      
+      {/* Portfolio Guide Assistant */}
+      <Assistant sectionsTheme={current} />
     </div>
   );
 }
