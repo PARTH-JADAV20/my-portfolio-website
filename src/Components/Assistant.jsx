@@ -64,6 +64,24 @@ const Assistant = ({ sectionsTheme }) => {
     const [currentSectionId, setCurrentSectionId] = useState('about');
     const [welcomeShown, setWelcomeShown] = useState(false);
 
+    // Preload all avatar images on component mount for instant display
+    useEffect(() => {
+        const imagesToPreload = [
+            welcomeAvatar,
+            aboutAvatar,
+            projectsAvatar,
+            certificateAvatar,
+            skillsAvatar,
+            educationAvatar,
+            contactAvatar,
+        ];
+
+        imagesToPreload.forEach((imageSrc) => {
+            const img = new Image();
+            img.src = imageSrc;
+        });
+    }, []);
+
     useEffect(() => {
         // Show assistant after a brief delay on every page load
         const timer = setTimeout(() => {
