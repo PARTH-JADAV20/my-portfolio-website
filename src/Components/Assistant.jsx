@@ -62,11 +62,13 @@ const Assistant = ({ sectionsTheme }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
     const [currentSectionId, setCurrentSectionId] = useState('about');
+    const [welcomeShown, setWelcomeShown] = useState(false);
 
     useEffect(() => {
         // Show assistant after a brief delay on every page load
         const timer = setTimeout(() => {
             setIsOpen(true);
+            setWelcomeShown(true);
         }, 1000);
         return () => clearTimeout(timer);
     }, []);
@@ -82,8 +84,10 @@ const Assistant = ({ sectionsTheme }) => {
                 if (section && section.offsetTop <= scrollPosition) {
                     setCurrentSectionId(sections[i]);
                     const stepIndex = assistantSteps.findIndex(step => step.sectionId === sections[i]);
+                    // Skip step 0 (welcome) if it has already been shown
                     if (stepIndex !== -1 && stepIndex !== currentStep) {
-                        setCurrentStep(stepIndex);
+                        const targetStep = welcomeShown && stepIndex === 0 ? 1 : stepIndex;
+                        setCurrentStep(targetStep);
                     }
                     break;
                 }
@@ -160,7 +164,24 @@ const Assistant = ({ sectionsTheme }) => {
 
     // Get theme colors for current section
     const getCurrentTheme = () => {
-        const sectionId = isOpen ? step.sectionId : currentSectionId;
+        let sectionId = currentSectionId;
+        
+        if (isOpen) {
+            sectionId = step.sectionId;
+        } else {
+            // When panel is closed, detect section at viewport center (most visible section)
+            const sections = ['about', 'projects', 'certificates', 'skills', 'education', 'contact'];
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+            
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = document.getElementById(sections[i]);
+                if (section && section.offsetTop <= scrollPosition) {
+                    sectionId = sections[i];
+                    break;
+                }
+            }
+        }
+        
         const theme = sectionsTheme[sectionId] || sectionsTheme.about;
 
         const getColorClasses = (hexColor) => {
@@ -225,9 +246,18 @@ const Assistant = ({ sectionsTheme }) => {
                 </button>
             )}
 
+            {/* Blur Backdrop for Welcome */}
+            {isOpen && currentStep === 0 && (
+                <div className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm transition-all duration-200"></div>
+            )}
+
             {/* Main Assistant Panel */}
             {isOpen && (
-                <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] sm:w-full sm:max-w-md mx-auto">
+                <div className={`fixed left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] sm:w-full sm:max-w-md mx-auto transition-all duration-300 ${
+                    currentStep === 0 
+                        ? 'top-1/2 -translate-y-1/2' 
+                        : 'bottom-4 sm:bottom-6'
+                }`}>
                     <div
                         className={`rounded-lg shadow-2xl border-2 overflow-hidden transition-all duration-200 ${isAnimating ? 'opacity-0' : 'opacity-100'
                             } ${currentTheme.bg} ${currentTheme.cardBorder}`}
@@ -265,9 +295,12 @@ const Assistant = ({ sectionsTheme }) => {
                                     <div className="w-12 h-12 min-w-[3rem] min-h-[3rem] max-w-[3rem] max-h-[3rem]
      rounded-md border-2 overflow-hidden bg-white shadow-sm flex items-center justify-center">
                                         <img
+                                            key={step.id}
                                             src={avatarSrc}
                                             alt="avatar"
                                             className="block w-full h-full object-contain"
+                                            loading="eager"
+                                            decoding="sync"
                                         />
 
                                     </div>
@@ -281,21 +314,24 @@ const Assistant = ({ sectionsTheme }) => {
                                 </div>
                             </div>
 
-                            {/* Progress indicator */}
+                            {/* Progress indicator - hidden for welcome */}
+                            {currentStep > 0 && (
                             <div className="mb-3">
                                 <div className="flex gap-1">
-                                    {assistantSteps.map((_, index) => (
+                                    {assistantSteps.slice(1).map((_, index) => (
                                         <div
                                             key={index}
-                                            className={`h-1 flex-1 rounded-full transition-colors ${index <= currentStep ? currentTheme.progressBg : 'bg-gray-200'
-                                                }`}
+                                            className={`h-1 flex-1 rounded-full transition-colors ${
+                                                index + 1 <= currentStep ? currentTheme.progressBg : 'bg-gray-200'
+                                            }`}
                                         ></div>
                                     ))}
                                 </div>
                                 <p className="text-[10px] sm:text-xs text-gray-500 mt-1 text-right">
-                                    {currentStep + 1} of {assistantSteps.length}
+                                    {currentStep} of {assistantSteps.length - 1}
                                 </p>
                             </div>
+                            )}
 
                             {/* Actions */}
                             <div className="flex gap-1 sm:gap-2">
