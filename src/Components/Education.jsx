@@ -7,8 +7,8 @@ export default function Education({ theme }) {
       {
         institution: "Rai University Ahmedabad",
         degree: "Bachelor of Technology in Computer Science and Engineering",
-        year: "Current CGPA :- 9.42",
-        description: "Relevant coursework: Web Development.",
+        year: "Current CGPA :- 9.24",
+        description: "Relevant coursework: Web Development, Cloud Computing, DevOps.",
       },
       {
         institution: "Kendriya Vidyalaya Dhrangadhra",
