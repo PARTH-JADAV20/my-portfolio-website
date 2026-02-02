@@ -69,7 +69,7 @@ export default function Projects({ theme }) {
       preview: "https://yantra-care.vercel.app/",
       github: "https://github.com/PARTH-JADAV20/YantraCare",
       image: img1,
-      tags: ["Next js", "MongoDB", "Recharts", "Hackathon"]
+      tags: ["React","Node.js", "MongoDB", "Hackathon"]
     },
     {
       title: "LeetCode-Smart-Analysis",
