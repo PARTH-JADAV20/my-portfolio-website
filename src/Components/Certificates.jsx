@@ -22,6 +22,9 @@ import cert16 from '../images/Certificates/full satck infosys.png';
 import cert17 from '../images/Certificates/gateway loadbalancer simplilearn.png';
 import cert18 from '../images/Certificates/genai backend coursera.png';
 import cert19 from '../images/Certificates/restapi_hackerrank.png';
+import cert20 from '../images/Certificates/odooxadani.jpeg';
+import cert21 from '../images/Certificates/hackerrank_sql(intermediate).png';
+import cert22 from '../images/Certificates/hackerrank_sql(basic).png';
 
 export default function Certificates({ theme }) {
   const t = theme || {};
@@ -55,6 +58,16 @@ export default function Certificates({ theme }) {
       title: "JavaScript(Intermediate) Certification",
       image: cert3,
       description: "Certified JavaScript Developer from HackerRank"
+    },
+    {
+      title: "SQL(Basic) Certification",
+      image: cert22,
+      description: "Certified SQL Developer from HackerRank"
+    },
+    {
+      title: "SQL(Intermediate) Certification",
+      image: cert21,
+      description: "Certified SQL Developer from HackerRank"
     },
     {
       title: "GitHub Copilot",
@@ -105,11 +118,6 @@ export default function Certificates({ theme }) {
       title: "CSS(Basic) Certification",
       image: cert1,
       description: "CSS Certified from HackerRank"
-    },
-    {
-      title: "Odoo X Gujarat vidyapith Hackathon 2025",
-      image: cert9,
-      description: "Participated in Odoo X Gujarat vidyapith Hackathon 2025 as selected in top 50 teams"
     }, 
     {
       title: "Microsoft Azure Fundamentals",
@@ -120,6 +128,16 @@ export default function Certificates({ theme }) {
       title: "Microsoft Power BI Fundamentals",
       image: cert8,
       description: "Took part in Microsoft Power BI Fundamentals Seminar In Rai University, Gujarat"
+    },
+    {
+      title: "Odoo X Gujarat vidyapith Hackathon 2025",
+      image: cert9,
+      description: "Participated in Odoo X Gujarat vidyapith Hackathon 2025 as selected in top 50 teams"
+    },
+    {
+      title: "Odoo X Adani University Hackathon 2026",
+      image: cert20,
+      description: "Participated in Odoo X Adani University Hackathon 2026"
     }
   ];
 

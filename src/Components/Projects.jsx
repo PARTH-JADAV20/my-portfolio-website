@@ -10,6 +10,10 @@ import img8 from '../images/graspcheck.png';
 import img9 from '../images/internship.png';
 import img10 from '../images/sip.png';
 import img11 from '../images/tictaktoe.png';
+import img12 from '../images/ecosetu.png';
+import img1 from '../images/Yantracare.png';
+import img13 from '../images/leetcode.png';
+import img14 from '../images/setulink.png';
 
 export default function Projects({ theme }) {
   const t = theme || {};
@@ -25,6 +29,14 @@ export default function Projects({ theme }) {
       preview: "https://outfits-of-joy.vercel.app/",
       image: img2,
       tags: ["React", "Node.js", "MongoDB", "Express", "JWT", "Tailwind CSS", "Authentication", "PaymentGateway"]
+    },
+    {
+      title: "ECOSetu",
+      description: "ECOSetu is a PLM-ERP system built at the Odoo x Adani University Hackathon to optimize manufacturing and product lifecycle workflows.",
+      github: "https://github.com/PARTH-JADAV20/ECOSetu",
+      preview: "https://eco-setu.vercel.app/",
+      image: img12,
+      tags: ["Next.js", "PostgreSQL", "Hackathon", "Neon", "Node Mailer", "Role-Based Access Control", "Odoo X Adani University", "Tailwind CSS", "TypeScript"]
     },
     {
       title: "FarmTust",
@@ -52,12 +64,35 @@ export default function Projects({ theme }) {
       tags: ["Next js", "MongoDB", "Material UI", "Recharts", "REST APIs"]
     },
     {
+      title: "YantraCare",
+      description: "A comprehensive Equipment Maintenance Management System designed to streamline maintenance operations, track equipment lifecycle, and manage maintenance teams efficiently.",
+      preview: "https://yantra-care.vercel.app/",
+      github: "https://github.com/PARTH-JADAV20/YantraCare",
+      image: img1,
+      tags: ["Next js", "MongoDB", "Recharts", "Hackathon"]
+    },
+    {
+      title: "LeetCode-Smart-Analysis",
+      description: "A Chrome extension that enhances your LeetCode experience by providing AI-powered approach suggestions and complexity analysis directly within the LeetCode interface.",
+      github: "https://github.com/PARTH-JADAV20/LeetCode-Smart-Analysis",
+      image: img13,
+      tags: ["React", "OpenRouter API", "Deepseek AI", "chrome extension"]
+    },
+    {
+      title: "Setulink",
+      description: "Setulink acts as a bridge between your local machine and the global Cloudflare network. It leverages the cloudflared engine to create a persistent, encrypted tunnel.",
+      preview: "https://www.npmjs.com/package/setulink",
+      github: "https://github.com/PARTH-JADAV20/setulink",
+      image: img14,
+      tags: ["Node Package Manager", "Cloudflare", "Tunnel", "CLI Tool"]
+    },
+    {
       title: "TicTacToe",
       description: "A modern, multiplayer Tic Tac Toe game with a neon-themed UI, featuring live multiplayer functionality, game history tracking, and a leaderboard system. Created with bolt.new",
       preview: "https://parth-tic-tac-toe.vercel.app/",
       github: "https://github.com/PARTH-JADAV20/Next-tic-tac-toe",
       image: img11,
-      tags: ["Next js", "MongoDB", "bolt.new", "Ai Generation"]
+      tags: ["Next js", "MongoDB", "bolt.new"]
     },
     {
       title: "GraspCheck",
