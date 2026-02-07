@@ -1,7 +1,7 @@
 import { Menu, X, Sparkles } from 'lucide-react';
 import { useState, useMemo } from 'react';
 
-export default function Header({ onThemeToggle, themeName, sectionsTheme }) {
+export default function Header({ onThemeToggle, themeName, sectionsTheme, currentSection, showMarker }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const linkColors = useMemo(() => {
@@ -10,6 +10,11 @@ export default function Header({ onThemeToggle, themeName, sectionsTheme }) {
       Object.entries(sectionsTheme).map(([id, cfg]) => [id, cfg?.dot || cfg?.icon || 'text-text-gray'])
     );
   }, [sectionsTheme]);
+
+  const getMarkerColor = (sectionId) => {
+    const section = sectionsTheme?.[sectionId];
+    return section?.thumb || '#000000';
+  };
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -38,9 +43,15 @@ export default function Header({ onThemeToggle, themeName, sectionsTheme }) {
               <a
                 key={link.id}
                 href={`#${link.id}`}
-                className={`transition-colors font-medium ${linkColors[link.id] || 'text-text-gray'} hover:opacity-90`}
+                className={`relative transition-colors font-medium ${linkColors[link.id] || 'text-text-gray'} hover:opacity-90`}
               >
                 {link.label}
+                {showMarker && currentSection === link.id && (
+                  <span
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full transition-all duration-300"
+                    style={{ backgroundColor: getMarkerColor(link.id) }}
+                  ></span>
+                )}
               </a>
             ))}
             <button
@@ -76,9 +87,17 @@ export default function Header({ onThemeToggle, themeName, sectionsTheme }) {
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block py-2 px-4 transition-colors rounded-flat hover:bg-gray-50 font-medium ${linkColors[link.id] || 'text-text-gray'} hover:opacity-90`}
+                className={`relative block py-2 px-4 transition-colors rounded-flat hover:bg-gray-50 font-medium ${linkColors[link.id] || 'text-text-gray'} hover:opacity-90`}
               >
-                {link.label}
+                <span className="flex items-center gap-2">
+                  {showMarker && currentSection === link.id && (
+                    <span
+                      className="w-1.5 h-1.5 rounded-full transition-all duration-300"
+                      style={{ backgroundColor: getMarkerColor(link.id) }}
+                    ></span>
+                  )}
+                  {link.label}
+                </span>
               </a>
             ))}
             <button

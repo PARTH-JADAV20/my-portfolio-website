@@ -292,6 +292,8 @@ function App() {
   );
 
   const [themeIndex, setThemeIndex] = useState(0);
+  const [currentSection, setCurrentSection] = useState('about');
+  const [showMarker, setShowMarker] = useState(false);
 
   // Scroll to top on page load/refresh and prevent browser scroll restoration
   useEffect(() => {
@@ -300,6 +302,28 @@ function App() {
     }
     window.scrollTo(0, 0);
   }, []);
+
+  // Track current section based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!showMarker) return; // Don't update if marker is not shown yet
+
+      const sections = ['about', 'projects', 'certificates', 'skills', 'education', 'contact'];
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setCurrentSection(sections[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [showMarker]);
 
   useEffect(() => {
     const cursor = document.querySelector('.custom-cursor');
@@ -528,6 +552,8 @@ function App() {
         onThemeToggle={cycleTheme}
         themeName={themes[themeIndex].name}
         sectionsTheme={current}
+        currentSection={currentSection}
+        showMarker={showMarker}
       />
 
       <section
@@ -575,7 +601,7 @@ function App() {
       <Footer />
       
       {/* Portfolio Guide Assistant */}
-      <Assistant sectionsTheme={current} />
+      <Assistant sectionsTheme={current} onMarkerActivate={() => setShowMarker(true)} />
     </div>
   );
 }

@@ -57,7 +57,7 @@ const avatarMap = {
     contact: contactAvatar,
 };
 
-const Assistant = ({ sectionsTheme }) => {
+const Assistant = ({ sectionsTheme, onMarkerActivate }) => {
     const [currentStep, setCurrentStep] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
@@ -117,6 +117,11 @@ const Assistant = ({ sectionsTheme }) => {
     }, [currentStep]);
 
     const handleNext = () => {
+        // Activate marker on first next click
+        if (currentStep === 0 && onMarkerActivate) {
+            onMarkerActivate();
+        }
+
         if (currentStep < assistantSteps.length - 1) {
             setIsAnimating(true);
 
@@ -165,6 +170,11 @@ const Assistant = ({ sectionsTheme }) => {
     };
 
     const handleSkip = () => {
+        // Activate marker on close
+        if (onMarkerActivate) {
+            onMarkerActivate();
+        }
+        
         setIsAnimating(true);
         setTimeout(() => {
             setIsOpen(false);
@@ -371,7 +381,7 @@ const Assistant = ({ sectionsTheme }) => {
                                         </button>
                                         <button
                                             onClick={handleNext}
-                                            className={`px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm text-white rounded-md transition-all font-medium border-2 ${currentTheme.buttonBg} ${currentTheme.buttonHover} ${currentTheme.buttonBorder}`}
+                                            className={`px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm text-white rounded-md transition-all font-medium border-2 ${currentTheme.buttonBg} ${currentTheme.buttonHover} ${currentTheme.buttonBorder} ${currentStep === 0 ? 'animate-wobble' : ''}`}
                                         >
                                             Next →
                                         </button>

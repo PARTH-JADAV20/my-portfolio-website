@@ -38,10 +38,11 @@ export default function About({ theme }) {
               </a>
               <a
                 href="/Parth Jadav Resume.pdf"
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group border-2 border-muted-orange-300 px-6 py-3 rounded-full hover:border-muted-orange-500 hover:text-muted-orange-600 hover:bg-muted-orange-100 transition-all text-text-gray"
               >
-                Download Resume
+                View Resume
               </a>
             </div>
           </div>
