@@ -36,7 +36,7 @@ export default function Projects({ theme }) {
     {
       title: "ECOSetu",
       description: "ECOSetu is a PLM-ERP system built at the Odoo x Adani University Hackathon to optimize manufacturing and product lifecycle workflows.",
-      postmanDocs: "https://documenter.getpostman.com/view/53356188/2sBXijJrNc",
+      postmanDocs: "https://documenter.getpostman.com/view/53356188/2sBXihrZ7K",
       github: "https://github.com/PARTH-JADAV20/ECOSetu",
       preview: "https://eco-setu.vercel.app/",
       image: img12,
@@ -45,7 +45,7 @@ export default function Projects({ theme }) {
     {
       title: "FarmTust",
       description: "A full-stack Certified and Verified Organic farm Product E-commerce website. Built with React, Node.js, and MongoDB.",
-      postmanDocs: "https://documenter.getpostman.com/view/53356188/2sBXijJrNc",
+      postmanDocs: "https://documenter.getpostman.com/view/53356188/2sBXijJrJG",
       github: "https://github.com/PARTH-JADAV20/FarmTrust-x-Hackathon",
       figma: "https://www.figma.com/design/SNuN8wbnReIue8nUOJhjEG/Untitled?node-id=0-1&p=f&t=tAvB32zrNQdsGZpU-0",
       preview: "https://farmtrust.netlify.app/",
@@ -72,7 +72,7 @@ export default function Projects({ theme }) {
       title: "YantraCare",
       description: "A comprehensive Equipment Maintenance Management System designed to streamline maintenance operations, track equipment lifecycle, and manage maintenance teams efficiently.",
       preview: "https://yantra-care.vercel.app/",
-      postmanDocs: "https://documenter.getpostman.com/view/53356188/2sBXijJrNc",
+      postmanDocs: "https://documenter.getpostman.com/view/53356188/2sBXijJrNi",
       github: "https://github.com/PARTH-JADAV20/YantraCare",
       image: img1,
       tags: ["React","Node.js", "MongoDB", "Hackathon"]
