@@ -25,6 +25,9 @@ import cert19 from '../images/Certificates/restapi_hackerrank.png';
 import cert20 from '../images/Certificates/odooxadani.jpeg';
 import cert21 from '../images/Certificates/hackerrank_sql(intermediate).png';
 import cert22 from '../images/Certificates/hackerrank_sql(basic).png';
+import cert23 from '../images/Certificates/dopengar.png';
+import cert24 from '../images/Certificates/psb.png';
+import cert25 from '../images/Certificates/psi.png';
 
 export default function Certificates({ theme }) {
   const t = theme || {};
@@ -118,6 +121,16 @@ export default function Certificates({ theme }) {
       title: "CSS(Basic) Certification",
       image: cert1,
       description: "CSS Certified from HackerRank"
+    },
+    {
+      title: "Problem Solving(Basic) Certification",
+      image: cert24,
+      description: "Certified Problem Solving Developer from HackerRank"
+    },
+    {
+      title: "Problem Solving(Intermediate) Certification",
+      image: cert25,
+      description: "Certified Problem Solving Developer from HackerRank"
     }, 
     {
       title: "Microsoft Azure Fundamentals",
@@ -128,6 +141,11 @@ export default function Certificates({ theme }) {
       title: "Microsoft Power BI Fundamentals",
       image: cert8,
       description: "Took part in Microsoft Power BI Fundamentals Seminar In Rai University, Gujarat"
+    },
+    {
+      title: "Doppelganger 30hr Hackathon",
+      image: cert23,
+      description: "Participated in Doppelganger 30hr Hackathon 2026 by Openpools.in"
     },
     {
       title: "Odoo X Gujarat vidyapith Hackathon 2025",

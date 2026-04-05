@@ -4,10 +4,11 @@ import { motion } from 'framer-motion';
 export default function Skills({ theme }) {
   const t = theme || {};
     const skills = [
-      "React", "Node.js", "JavaScript", "Next.js",
+      "React", "Node.js", "JavaScript", "Next.js"
+       ,"React Native", "Spring Boot", "Docker", "AWS",
        "C/C++", "Java", "MongoDB", "SQL", "Redis",
       "Git & GitHub", "API Handling", "Express.js", "TailwindCSS", 
-      "Figma", "CSS", "HTML",  
+      "Figma", "CSS", "HTML",
     ];
 
     return (

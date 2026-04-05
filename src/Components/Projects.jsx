@@ -1,4 +1,4 @@
-import { Briefcase, ExternalLink, Github, Figma } from 'lucide-react';
+import { Briefcase, Link, Github, Figma, Files } from 'lucide-react';
 import { useState } from 'react';
 import img2 from '../images/ooj.png';
 import img3 from '../images/fourapi.png';
@@ -14,6 +14,9 @@ import img12 from '../images/ecosetu.png';
 import img1 from '../images/Yantracare.png';
 import img13 from '../images/leetcode.png';
 import img14 from '../images/setulink.png';
+import img15 from '../images/expense.png';
+import img16 from '../images/geotag.png';
+import img17 from '../images/limitless.png';
 
 export default function Projects({ theme }) {
   const t = theme || {};
@@ -23,7 +26,7 @@ export default function Projects({ theme }) {
     {
       title: "Outfits Of Joy",
       description: "A full-stack Outfit Renting platform that has outfits for rent like sherwani, Tuxedo, lehenga etc. Built with React, Node.js, and MongoDB.",
-      postmanDocs: "https://documenter.getpostman.com/view/39190159/2sAYQcEVQx",
+      postmanDocs: "https://documenter.getpostman.com/view/53356188/2sBXijJrNc",
       github: "https://github.com/PARTH-JADAV20/outfits_of_joy",
       figma: "https://www.figma.com/design/Ccb55yT6IzEFeFS8JaOTdJ/outfitsofjoy?node-id=0-1&t=EuCTkbeMXNHquqx1-1",
       preview: "https://outfits-of-joy.vercel.app/",
@@ -33,6 +36,7 @@ export default function Projects({ theme }) {
     {
       title: "ECOSetu",
       description: "ECOSetu is a PLM-ERP system built at the Odoo x Adani University Hackathon to optimize manufacturing and product lifecycle workflows.",
+      postmanDocs: "https://documenter.getpostman.com/view/53356188/2sBXijJrNc",
       github: "https://github.com/PARTH-JADAV20/ECOSetu",
       preview: "https://eco-setu.vercel.app/",
       image: img12,
@@ -41,6 +45,7 @@ export default function Projects({ theme }) {
     {
       title: "FarmTust",
       description: "A full-stack Certified and Verified Organic farm Product E-commerce website. Built with React, Node.js, and MongoDB.",
+      postmanDocs: "https://documenter.getpostman.com/view/53356188/2sBXijJrNc",
       github: "https://github.com/PARTH-JADAV20/FarmTrust-x-Hackathon",
       figma: "https://www.figma.com/design/SNuN8wbnReIue8nUOJhjEG/Untitled?node-id=0-1&p=f&t=tAvB32zrNQdsGZpU-0",
       preview: "https://farmtrust.netlify.app/",
@@ -67,9 +72,17 @@ export default function Projects({ theme }) {
       title: "YantraCare",
       description: "A comprehensive Equipment Maintenance Management System designed to streamline maintenance operations, track equipment lifecycle, and manage maintenance teams efficiently.",
       preview: "https://yantra-care.vercel.app/",
+      postmanDocs: "https://documenter.getpostman.com/view/53356188/2sBXijJrNc",
       github: "https://github.com/PARTH-JADAV20/YantraCare",
       image: img1,
       tags: ["React","Node.js", "MongoDB", "Hackathon"]
+    },
+    {
+      title: "Limitless",
+      description: "A high-performance, full-stack API Rate Limiting and Analytics platform. This project serves as my first comprehensive dive into Spring Boot, demonstrating robust backend architecture, security, and real-time data processing.",
+      github: "https://github.com/PARTH-JADAV20/ratelimiter-spring-boot",
+      image: img17,
+      tags: ["Spring Boot","Next js", "MySQL", "Java Web Development"]
     },
     {
       title: "LeetCode-Smart-Analysis",
@@ -100,6 +113,20 @@ export default function Projects({ theme }) {
       github: "https://github.com/PARTH-JADAV20/graspcheck",
       image: img8,
       tags: ["React", "gemini API", "webscraping", "chrome extension"]
+    },
+    {
+      title: "Secure Expense Tracker",
+      description: "A complete secure expense tracking application with biometric authentication, built with React Native (Expo) frontend and Node.js/Express backend.",
+      github: "https://github.com/PARTH-JADAV20/expense-tracker-expo-app",
+      image: img15,
+      tags: ["React Native Expo", "Mobile App", "Node.js", "Biometric Authentication", "Express"]
+    },
+    {
+      title: "Geo-Photo Tager",
+      description: "A complete production-ready full-stack mobile application for capturing and organizing photos with geotagging capabilities.",
+      github: "https://github.com/PARTH-JADAV20/geo-gallery",
+      image: img16,
+      tags: ["React Native Expo", "Mobile App"]
     },
     {
       title: "4 APIS",
@@ -179,7 +206,7 @@ export default function Projects({ theme }) {
                       rel="noopener noreferrer"
                       className={`inline-flex items-center text-sm ${t.link || 'text-muted-green-600'} ${t.linkHover || 'hover:text-muted-green-700'} transition-colors`}
                     >
-                      <ExternalLink className="w-4 h-4 mr-1" /> Website Link
+                      <Link className="w-4 h-4 mr-1" /> Website Link
                     </a>
                   )}
                   {project.postmanDocs && (
@@ -189,7 +216,7 @@ export default function Projects({ theme }) {
                       rel="noopener noreferrer"
                       className={`inline-flex items-center text-sm ${t.link || 'text-muted-green-600'} ${t.linkHover || 'hover:text-muted-green-700'} transition-colors`}
                     >
-                      <ExternalLink className="w-4 h-4 mr-1" /> Documentation
+                      <Files className="w-4 h-4 mr-1" /> API Docs
                     </a>
                   )}
                   {project.github && (
