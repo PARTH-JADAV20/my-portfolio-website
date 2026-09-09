@@ -28,6 +28,8 @@ import cert22 from '../images/Certificates/hackerrank_sql(basic).png';
 import cert23 from '../images/Certificates/dopengar.png';
 import cert24 from '../images/Certificates/psb.png';
 import cert25 from '../images/Certificates/psi.png';
+import cert26 from '../images/Certificates/aws pactinoer.png';
+import cert27 from '../images/Certificates/nptel cloud.jpeg';
 
 export default function Certificates({ theme }) {
   const t = theme || {};
@@ -71,6 +73,16 @@ export default function Certificates({ theme }) {
       title: "SQL(Intermediate) Certification",
       image: cert21,
       description: "Certified SQL Developer from HackerRank"
+    },
+    {
+      title: "AWS Practitioner",
+      image: cert26,
+      description: "Completed AWS Practitioner Course"
+    },
+    {
+      title: "NPTEL Cloud Computing",
+      image: cert27,
+      description: "Completed NPTEL Cloud Computing Course"
     },
     {
       title: "GitHub Copilot",
